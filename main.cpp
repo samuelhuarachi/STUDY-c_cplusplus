@@ -1,12 +1,11 @@
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #define SIZE 50
-
 
 using namespace std;
 
 int main() {
-    printf("ola mundo !!!!!!!!!!");
+  printf("ola mundo !!!!!!!!!!");
 
-    return 0;
+  return 0;
 }
