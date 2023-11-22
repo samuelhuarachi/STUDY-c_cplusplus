@@ -81,5 +81,24 @@ int main() {
   destroy_lightsaber(&lightsaberBlue);
   destroy_jedi(&obinwan);
   printf("Obinwan é igual NULL? %d\n", obinwan == NULL);
+
+  Lightsaber **vet = (Lightsaber **)calloc(3, sizeof(Lightsaber *));
+  vet[0] = create_lightsaber("light saber red", "red");
+  vet[1] = create_lightsaber("light saber green", "green");
+  vet[2] = create_lightsaber("light saber dark", "dark");
+
+  for (int i = 0; i < 3; i++) {
+    Lightsaber *lightsaber = vet[i];
+    printf("Cor do lightsaber: %s", lightsaber->color);
+    puts("");
+  }
+
+  // destroying vet lightsaber
+  for (int i = 0; i < 3; i++) {
+    destroy_lightsaber(&vet[i]);
+  }
+  free(vet);
+  vet = NULL;
+
   return 0;
 }
