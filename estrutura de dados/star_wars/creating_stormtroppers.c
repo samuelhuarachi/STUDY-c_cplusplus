@@ -7,14 +7,12 @@ void modifyTrooperForMaxLevel(int *p) {
 }
 
 int main() {
-
     int troppers[100];
 
-    for (int i = 0; i < 100; i++)
-    {
+    for (int i = 0; i < 100; i++) {
         troppers[i] = i + 100;
     }
-    
+
     printf("First trooper value: %d\n\n", troppers[0]);
     printf("Last trooper value: %d\n\n", troppers[99]);
 

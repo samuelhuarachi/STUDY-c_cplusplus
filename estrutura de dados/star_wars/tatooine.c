@@ -14,7 +14,7 @@ typedef struct _jedi {
   Lightsaber *lightsaber;
 } Jedi;
 
-void lukeWalking() {
+void lukeWalking(void) {
   printf("luke walking ...");
   puts("");
 }
@@ -24,36 +24,42 @@ void showLukeValue(int lukeValue) {
 }
 
 Lightsaber *create_lightsaber(const char *name, const char *color) {
-  Lightsaber *lightsaber = (Lightsaber *)calloc(1, sizeof(Lightsaber));
+  Lightsaber *lightsaber;
+
+  lightsaber = (Lightsaber *)calloc(1, sizeof(Lightsaber));
   strcpy(lightsaber->name, name);
   strcpy(lightsaber->color, color);
-
-  return lightsaber;
+  return (lightsaber);
 }
 
 Lightsaber *copy_lightsaber(const Lightsaber *lightsaber) {
-  return create_lightsaber(lightsaber->name, lightsaber->color);
+  return (create_lightsaber(lightsaber->name, lightsaber->color));
 }
 
 void destroy_lightsaber(Lightsaber **lightsaber_ref) {
-  Lightsaber *lightsaber = *lightsaber_ref;
+  Lightsaber *lightsaber;
+
+  lightsaber = *lightsaber_ref;
   free(lightsaber);
   *lightsaber_ref = NULL;
 }
 
 Jedi *create_jedi(const char *name, unsigned int force, float age,
                   const Lightsaber *lightsaber) {
-  Jedi *jedi = (Jedi *)calloc(1, sizeof(Jedi));
+  Jedi *jedi;
+
+  jedi = (Jedi *)calloc(1, sizeof(Jedi));
   strcpy(jedi->name, name);
   jedi->force = force;
   jedi->age = age;
   jedi->lightsaber = copy_lightsaber(lightsaber);
-
-  return jedi;
+  return (jedi);
 }
 
 void destroy_jedi(Jedi **jedi_ref) {
-  Jedi *jedi = *jedi_ref;
+  Jedi *jedi;
+
+  jedi = *jedi_ref;
   destroy_lightsaber(&jedi->lightsaber);
   free(jedi);
   *jedi_ref = NULL;
@@ -64,7 +70,7 @@ void destroy_jedi(Jedi **jedi_ref) {
  */
 void upLukeForce(int *z) { *z = 4; }
 
-int main() {
+int main(void) {
   // Aluno ted = {.nome = "dfas", .idade = 10}; outra maneira de declarar os
   // valores da struct
 
@@ -100,5 +106,5 @@ int main() {
   free(vet);
   vet = NULL;
 
-  return 0;
+  return (0);
 }
