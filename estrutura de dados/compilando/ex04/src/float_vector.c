@@ -9,6 +9,8 @@
 
 /************* PRIVADA *********/
 
+
+
 struct float_vector {
     int capacity;
     int size;
@@ -51,7 +53,7 @@ void FloatVector_append(FloatVector *vec, float val) {
 }
 
 void FloatVector_print(const FloatVector *vec) {
-    puts("--------------------");
+    puts("--- PUTS ----------");
     printf("Size: %d\n", vec->size);
     printf("Capacity: %d\n", vec->capacity);
     puts("----");
