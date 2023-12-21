@@ -7,8 +7,7 @@ int main() {
     LinkedList_add_first(L, 4);
     LinkedList_add_first(L, 2);
     LinkedList_add_first(L, 10);
-s    LinkedList_print(L);
-
+    LinkedList_print(L);
 
     return 0;
 }

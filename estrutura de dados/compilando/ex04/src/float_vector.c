@@ -9,8 +9,6 @@
 
 /************* PRIVADA *********/
 
-
-
 struct float_vector {
     int capacity;
     int size;
@@ -22,9 +20,7 @@ bool _FloatVector_isFull(const FloatVector *vec) {
     return vec->size == vec->capacity;
 }
 
-
 /*********** PUBLICA **********/
-
 FloatVector *FloatVector_create(int capacity) {
     FloatVector *vec = (FloatVector*) calloc(1, sizeof(FloatVector));
     vec->size = 0;

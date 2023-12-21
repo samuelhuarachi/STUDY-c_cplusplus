@@ -10,6 +10,7 @@ typedef struct _snode {
 
 typedef struct _linked_list {
     SNode *begin;
+    SNode *end;
 } LinkedList;
 
 
@@ -27,10 +28,51 @@ SNode *SNode_create(int val) {
     return snode;
 }
 
+bool LinkedList_is_empty(const LinkedList *L) {
+    return L->begin == NULL && L->end == NULL;
+}
+
 void LinkedList_add_first(LinkedList *L, int val) {
     SNode *p = SNode_create(val);
     p->next = L->begin;
+
+    if (LinkedList_is_empty(L)) {
+        L->end = p;
+    }
+
     L->begin = p;
+}
+
+// void LinkedList_add_first(LinkedList *L, int val) {
+//     SNode *p = SNode_create(val);
+//     p->next = L->begin;
+//     L->begin = p;
+// }
+
+void LinkedList_add_last(LinkedList *L, int val) {
+    SNode *q = SNode_create(val);
+    if (LinkedList_is_empty(L)) {
+        L->begin = L->end = q;
+    } else {
+        L->end->next = q;
+        L->end = L->end->next;
+    }
+}
+
+void LinkedList_add_last_slow(LinkedList *L, int val) {
+    SNode *q = SNode_create(val);
+    if (LinkedList_is_empty(L)) {
+        L->begin = q;
+    } else {
+        SNode *p = L->begin;
+        if (p != NULL) {
+            while(p->next != NULL) {
+                p = p->next;
+            }
+        }
+        
+        p->next = q;
+    }
 }
 
 void LinkedList_print(const LinkedList *L) {
@@ -42,4 +84,37 @@ void LinkedList_print(const LinkedList *L) {
         p = p->next;
     }
     printf("NULL \n");
+}
+
+void LinkedList_remove(LinkedList *L, int val){
+    if (!LinkedList_is_empty(L)) {
+        if (L->begin->val == val) {
+            SNode *pos = L->begin;
+
+            if (L->begin == L->end) {
+                L->end = NULL;
+            }
+
+            L->begin = L->begin->next;
+            free(pos);
+        } else {
+            SNode *prev = L->begin;
+            SNode *pos = L->begin->next;
+
+            while(pos != NULL && pos->val != val){
+                prev = pos;
+                pos = pos->next;
+            }
+
+            if (pos != NULL) {
+                prev->next = pos->next;
+                free(pos);
+                
+                if (pos->next == NULL) {
+                    L->end = prev;
+                }
+
+            }
+        }
+    }
 }

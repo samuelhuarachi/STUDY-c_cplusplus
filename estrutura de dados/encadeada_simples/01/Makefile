@@ -17,7 +17,7 @@ libed: \
 
 myapps: clean_apps \
 	$(BIN)/test_float_vector \
-	$(BIN)/enc1
+	$(BIN)/enc2
 
 $(OBJ)/%.o: $(SRC)/%.c $(INCLUDE)/%.h
 	gcc $(FLAGS) -c $< -I $(INCLUDE) -o $@
@@ -26,7 +26,7 @@ $(BIN)/%: $(APPS)/%.c
 	gcc $(FLAGS) $< $(LIBS) -I $(INCLUDE) -o $@
 
 run:
-	$(BIN)/enc1
+	$(BIN)/enc2
 
 clean:
 	rm -rf $(BIN)/* $(LIB)/* $(OBJ)/*
