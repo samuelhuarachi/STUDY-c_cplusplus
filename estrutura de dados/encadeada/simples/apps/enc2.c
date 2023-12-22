@@ -12,14 +12,11 @@ int main() {
     LinkedList_print(L);
     LinkedList_remove(L, 3);
     LinkedList_print(L);
-
     LinkedList_remove(L, 6);
     LinkedList_print(L);
-
     LinkedList_remove(L, 11);
     LinkedList_print(L);
-
-
+    LinkedList_destroy(&L);
 
     // LinkedList *L = LinkedList_create();
     // LinkedList_add_first(L, 5);
