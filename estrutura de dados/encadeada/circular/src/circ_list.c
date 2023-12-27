@@ -91,6 +91,22 @@ void CircList_add_first(CircList *L, int val) {
     L->size++;
 }
 
+void CircList_add_last(CircList *L, int val) {
+    CircNode *p = CircNode_create(val);
+
+    if (CircList_is_empty(L)) {
+        L->begin = p;
+    } else {
+        L->end->next = p;
+        p->prev = L->end;
+
+        L->begin->prev = p;
+        p->next = L->begin;
+    }
+    L->end = p;
+    L->size++;
+}
+
 void CircList_print(const CircList *L) {
     if (CircList_is_empty(L)) {
         printf("L -> NULL\n");
@@ -160,4 +176,26 @@ void CircList_inverted_print_v2(const CircList *L) {
         printf("\nL->begin -> %d\n", L->begin->val);
     }
     printf("Size: %lu\n\n", L->size);
+}
+
+void CircList_remove(CircList *L, int val) {
+    if (!CircList_is_empty(L)) {
+        if (L->begin->val == val) {
+            CircNode *p = L->begin;
+
+            if (L->begin == L->end) {
+                L->begin = NULL;
+                L->end = NULL;
+            } else {
+                L->begin = p->next;
+                L->begin->prev = L->end;
+                L->end->next = L->begin;
+            }
+
+            CircNode_destroy(&p);
+            L->size--;
+        } else {
+
+        }
+    }
 }

@@ -11,12 +11,13 @@ int main() {
     CircList_inverted_print_v2(L);
 
 
-    CircList_add_first(L, 1);
-    CircList_add_first(L, 2);
-    CircList_add_first(L, 3);
-    CircList_add_first(L, 4);
-    CircList_add_first(L, 5);
-    CircList_add_first(L, 6);
+    CircList_add_last(L, 1);
+    CircList_add_last(L, 2);
+    CircList_add_last(L, 3);
+    CircList_add_last(L, 4);
+    CircList_add_last(L, 5);
+    CircList_add_last(L, 6);
+    CircList_add_first(L, 99);
     // CircList_print(L);
     // CircList_remove(L, 2);
     // CircList_print(L);
@@ -25,9 +26,9 @@ int main() {
     // CircList_remove(L, 6);
     // CircList_print(L);
     CircList_print(L);
-    CircList_print_v2(L);
-    CircList_inverted_print(L);
-    CircList_inverted_print_v2(L);
+    // CircList_print_v2(L);
+    // CircList_inverted_print(L);
+    // CircList_inverted_print_v2(L);
     CircList_destroy(&L);
 
     return 0;
