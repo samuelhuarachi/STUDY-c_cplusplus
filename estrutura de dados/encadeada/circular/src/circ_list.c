@@ -180,8 +180,8 @@ void CircList_inverted_print_v2(const CircList *L) {
 
 void CircList_remove(CircList *L, int val) {
     if (!CircList_is_empty(L)) {
+        CircNode *p = L->begin;
         if (L->begin->val == val) {
-            CircNode *p = L->begin;
 
             if (L->begin == L->end) {
                 L->begin = NULL;
@@ -195,7 +195,22 @@ void CircList_remove(CircList *L, int val) {
             CircNode_destroy(&p);
             L->size--;
         } else {
+            p = p->next;
 
+            while (p != L->begin) {
+                if (p->val == val) {
+                    if (L->end == p) {
+                        L->end = p->prev;
+                    }
+                    p->prev->next = p->next;
+                    p->next->prev = p->prev;
+                    CircNode_destroy(&p);
+                    L->size--;
+                    break;
+                } else {
+                    p = p->next;
+                }
+            }
         }
     }
 }
