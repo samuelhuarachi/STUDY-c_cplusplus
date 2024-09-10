@@ -1,5 +1,5 @@
 # cmaismais
 
-In this repository I have study about c and c++
+In this repository I have study about C and C++
 
 
