@@ -5,6 +5,9 @@
 using namespace std;
 
 int main() {
-  printf("ola mundo !!!!!!!!");
+
+  cout << "Hello from Brazil" << endl;
 
   return 0;
+  
+}
