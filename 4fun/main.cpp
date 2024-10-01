@@ -7,7 +7,7 @@
 using namespace std;
 
 void display_active_players() {
-  cout << "Active players: " << Player::get_num_players() << endl;
+    cout << "Active players: " << Player::get_num_players() << endl;
 }
 
 int main() {
