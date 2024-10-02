@@ -18,9 +18,11 @@ int main() {
     display_active_players();
 
     {
-    Player frank{"Frank"};
+        Player frank{"Frank"};
         display_active_players();
     }
+
+    display_active_players();
 
     return 0;
 }
