@@ -40,6 +40,7 @@
         "memory": "cpp",
         "memory_resource": "cpp",
         "numeric": "cpp",
+        "optional": "cpp",
         "random": "cpp",
         "string_view": "cpp",
         "system_error": "cpp",
