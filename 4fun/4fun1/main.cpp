@@ -11,24 +11,22 @@ void display_active_players() {
 }
 
 int main() {
+    Player *enemy1 = new Player("Enemy 1", 100, 100);
+    Player *enemy2 = new Player("Enemy 2", 100, 100);
+    Player *enemy3 = new Player("Enemy 3", 100, 100);
+    Player *enemy4 = new Player("Enemy 4", 100, 100);
+
+    // {
+    //     Player frank{"Frank"};
+    //     display_active_players();
+    // }
+
     display_active_players();
 
-    Player hero{"Hero"};
-
-    display_active_players();
-
-    {
-        Player frank{"Frank"};
-        display_active_players();
-    }
-
-    display_active_players();
-
-    Player *enemy = new Player("Enemy", 100, 100);
-    display_active_players();
-    delete enemy;
-    display_active_players();
-
+    delete enemy1;
+    delete enemy2;
+    delete enemy3;
+    delete enemy4;
 
     return 0;
 }
