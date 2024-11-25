@@ -1,7 +1,8 @@
 #ifndef _PERSON_H_
 #define _PERSON_H_
+#include "Citizen.h"
 
-class Person {
+class Person : public Citizen {
   private:
     char *name;     // pointer to a char[] that holds a C-style string
     char *lastname; // pointer to a char[] that holds a C-style string
