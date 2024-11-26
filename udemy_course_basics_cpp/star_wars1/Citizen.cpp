@@ -1,11 +1,10 @@
-
-
+#include "Citizen.h"
 #include <iostream>
+
 using namespace std;
 
-// Abstract class serving as an interface
-class Citizen {
-  public:
-    virtual char *identification_number;
-    virtual ~Citizen() {} // Virtual destructor (best practice)
-};
+void Citizen::get_identification_number()  {
+    std::cout << identification_number << std::endl;
+}
+
+Citizen::~Citizen() { delete[] identification_number; }

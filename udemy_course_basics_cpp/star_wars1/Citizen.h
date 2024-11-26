@@ -4,8 +4,9 @@
 class Citizen {
 
   public:
-    virtual char *identification_number;
-    ~Citizen(); // destructor
+    char *identification_number;
+    void get_identification_number();
+    ~Citizen();
 };
 
 #endif

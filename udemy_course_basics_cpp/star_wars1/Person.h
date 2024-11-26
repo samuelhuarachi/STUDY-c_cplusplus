@@ -4,19 +4,18 @@
 
 class Person : public Citizen {
   private:
-    char *name;     // pointer to a char[] that holds a C-style string
-    char *lastname; // pointer to a char[] that holds a C-style string
+    char *name;
+    char *lastname;
+    char *city_born;
+
   public:
-    Person();                             // no-args constructor
-    Person(const char *s, const char *l); // overloaded constructor
-    // Person(const Person &source);         // copy constructor
-    // Person(Person &&source);              // move constructor
-    ~Person(); // destructor
-    // Person &operator=(const Person &rhs); // copy assignmeent
+    Person();
+    Person(const char *s, const char *l, const char *i);
+    ~Person();
 
     void say_name() const;
     int get_length() const;
-    const char *get_str() const;
+    const char *get_name() const;
 };
 
 #endif

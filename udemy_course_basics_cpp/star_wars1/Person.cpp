@@ -2,14 +2,12 @@
 #include <cstring>
 #include <iostream>
 
-// no-args constructor
 Person::Person() : name{nullptr} {
     name = new char[1];
     *name = '\0';
 }
 
-// Overloaded constructor
-Person::Person(const char *n, const char *l)
+Person::Person(const char *n, const char *l, const char *i)
     : name{nullptr}, lastname{nullptr} {
     if (n == nullptr) {
         name = new char[1];
@@ -26,15 +24,26 @@ Person::Person(const char *n, const char *l)
         lastname = new char[std::strlen(l) + 1];
         std::strcpy(lastname, l);
     }
+
+    if (i == nullptr) {
+        identification_number = new char[1];
+        *identification_number = '\0';
+    } else {
+        identification_number = new char[std::strlen(i) + 1];
+        std::strcpy(identification_number, i);
+    }
 }
 
-// Desctructor
-Person::~Person() { delete[] name; }
+Person::~Person() {
+    delete[] name;
+    delete[] lastname;
+}
 
-// display method
 void Person::say_name() const {
-    std::cout << name << " " << lastname << std::endl;
+    std::cout << "Hi, I'm " << name << " " << lastname
+              << ", and my citizen number is: " << identification_number
+              << std::endl;
 }
 
 int Person::get_length() const { return strlen(name); }
-const char *Person::get_str() const { return name; }
+const char *Person::get_name() const { return name; }

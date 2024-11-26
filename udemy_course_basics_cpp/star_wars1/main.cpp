@@ -10,8 +10,9 @@ int main() { // Mystring a{"Hello"};
     // b = "This is a test";
 
     // 1 - Person
-    Person anakin{"Anakin", "Skywalker"};
+    Person anakin{"Anakin", "Skywalker", "0000001"};
     anakin.say_name();
+    anakin.get_identification_number();
 
     // 2 - Padawan
 
