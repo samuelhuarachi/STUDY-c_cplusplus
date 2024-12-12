@@ -1,24 +1,22 @@
+#include "Anakin.h"
 #include "Person.h"
+#include <cstring>
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-int main() { // Mystring a{"Hello"};
-    // Mystring b;
-    // b = a;
-    // b = "This is a test";
+int main() {
 
-    // 1 - Person
-    Person anakin{"Anakin", "Skywalker", "0000001"};
+    Anakin anakin{"Anakin", "Skywalker"};
     anakin.say_name();
-    anakin.get_identification_number();
+    anakin.codeName();
 
-    // 2 - Padawan
-
-    // 3 - Jedi
-
-    // 4 - Sith
+    char *p;
+    p = new char[std::strlen("Samuel Gomes") + 1];
+    std::strcpy(p, "Samuel Gomes");
+    std::cout << "My name: " << p << std::endl;
+    delete[] p;
 
     return 0;
 }

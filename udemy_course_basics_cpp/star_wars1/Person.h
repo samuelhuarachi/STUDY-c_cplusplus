@@ -1,8 +1,7 @@
 #ifndef _PERSON_H_
 #define _PERSON_H_
-#include "Citizen.h"
 
-class Person : public Citizen {
+class Person {
   private:
     char *name;
     char *lastname;
@@ -10,7 +9,7 @@ class Person : public Citizen {
 
   public:
     Person();
-    Person(const char *s, const char *l, const char *i);
+    Person(const char *s, const char *l);
     ~Person();
 
     void say_name() const;

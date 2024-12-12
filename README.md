@@ -1,6 +1,3 @@
-# cmaismais
+# cplusplus
 
-I am using this repository to study C and C++.
-
-
-:D
+to learn C++
