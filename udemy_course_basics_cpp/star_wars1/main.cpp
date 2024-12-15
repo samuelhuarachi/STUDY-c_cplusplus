@@ -11,6 +11,9 @@ int main() {
     Anakin anakin{"Anakin", "Skywalker"};
     anakin.say_name();
     anakin.codeName();
+    anakin.setFavoritePhare("Working !!!");
+    anakin.sayFavoritePhare();
+    anakin.showLife();
 
     char *p;
     p = new char[std::strlen("Samuel Gomes") + 1];
