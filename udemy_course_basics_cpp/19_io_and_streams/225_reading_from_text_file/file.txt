@@ -1,0 +1,5 @@
+linha 1 123.145
+linha 2 23.23
+linha 3 34.6564
+linha 4 56.742
+linha 5 978.98
